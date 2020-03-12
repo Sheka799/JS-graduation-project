@@ -1,8 +1,8 @@
 'use scrict';
 
-import main from './modules/main';
+import dropdownMenu from './modules/dropdownMenu';
 
-main();
+dropdownMenu();
 
 
 
