@@ -1,3 +1,7 @@
 .stick {
   position: fixed;
 }
+.hidden {
+  display: 'none';
+}
+
