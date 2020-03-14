@@ -8,6 +8,7 @@ import fixMenu from './modules/fixMenu';
 import main from './modules/main';
 import arrow from './modules/arrow';
 import mainSlider from './modules/mainSlider';
+import photogallery from './modules/photogallery';
 
 dropdownMenu();
 modalWindow();
@@ -17,6 +18,7 @@ fixMenu();
 main();
 arrow();
 mainSlider();
+photogallery();
 
 
 
