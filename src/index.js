@@ -7,14 +7,16 @@ import gift from './modules/gift';
 import fixMenu from './modules/fixMenu';
 import main from './modules/main';
 import arrow from './modules/arrow';
+import mainSlider from './modules/mainSlider';
 
 dropdownMenu();
 modalWindow();
 modalWindowTwo();
-gift();
+// gift();
 fixMenu();
 main();
 arrow();
+mainSlider();
 
 
 

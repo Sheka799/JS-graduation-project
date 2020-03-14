@@ -5,3 +5,17 @@
   display: 'none';
 }
 
+.sliderBlock {
+  display: flex !important;
+}
+
+.main-slider .slide {
+	position: relative;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: none;
+  height: 100%;
+}
