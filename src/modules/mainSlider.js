@@ -20,9 +20,6 @@ const mainSlider = () => {
       currentSlide = 0;
     }
     nextSlide(slide, currentSlide, 'sliderBlock');
-
-    console.log(slide);
-    console.log(currentSlide);
   };  
 
   const startSlide = (time = 3000) => {

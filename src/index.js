@@ -12,7 +12,7 @@ import mainSlider from './modules/mainSlider';
 dropdownMenu();
 modalWindow();
 modalWindowTwo();
-gift();
+// gift();
 fixMenu();
 main();
 arrow();
