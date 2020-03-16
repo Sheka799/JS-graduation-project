@@ -36,7 +36,6 @@
   position: absolute;
   cursor: pointer;
   top: 50%;
- 
 }
 .gallery-btn.prev {
   left: 25%;
@@ -49,7 +48,6 @@
 
 .gallery-btn.next {
   right: 25%;
-  background-position: 75% 50%;
   background: url(../images/arrow-right.png) center no-repeat;
   width: 35px;
   height: 35px;
@@ -94,8 +92,49 @@
   transform: scale(1.2)
 }
 
+/* Слайдер */
+.services-wrapper {
+  position: relative;
+}
+.carousel-btn {
+  position: absolute;
+  cursor: pointer;
+  top: 40%;
+  border: none;
+  outline: none;
+}
+
+#test-left {
+  left: 0;
+  background: url(../images/arrow-left.png) center no-repeat;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #ECD022;
+}
+#test-right {
+  right: 0;
+  background: url(../images/arrow-right.png) center no-repeat;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #ECD022;
+}
+.services-wrapper {
+  overflow: hidden;
+  padding: 0;
+}
+.services-slider {
+  padding: 0;
+}
 
 
+
+
+
+
+
+/* media */
 @media (min-width: 1700px) {
   .gallery-btn.next {
     right: 420px;

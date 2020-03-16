@@ -9,6 +9,7 @@ import main from './modules/main';
 import arrow from './modules/arrow';
 import mainSlider from './modules/mainSlider';
 import photogallery from './modules/photogallery';
+import carousel from './modules/carousel';
 
 dropdownMenu();
 modalWindow();
@@ -19,6 +20,7 @@ main();
 arrow();
 mainSlider();
 photogallery();
+carousel();
 
 
 
