@@ -102,6 +102,8 @@
   top: 40%;
   border: none;
   outline: none;
+  -webkit-transition: background-color, -webkit-transform .4s;
+  transition: background-color, transform .4s, -webkit-transform .4s
 }
 
 #test-left {
@@ -112,6 +114,10 @@
   border-radius: 50%;
   background-color: #ECD022;
 }
+#test-left:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2)
+}
 #test-right {
   right: 0;
   background: url(../images/arrow-right.png) center no-repeat;
@@ -120,6 +126,10 @@
   border-radius: 50%;
   background-color: #ECD022;
 }
+#test-right:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2)
+}
 .services-wrapper {
   overflow: hidden;
   padding: 0;
@@ -127,6 +137,7 @@
 .services-slider {
   padding: 0;
 }
+
 
 
 
