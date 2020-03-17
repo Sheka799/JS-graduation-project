@@ -10,6 +10,7 @@ import arrow from './modules/arrow';
 import mainSlider from './modules/mainSlider';
 import photogallery from './modules/photogallery';
 import carousel from './modules/carousel';
+import formOnPage from './modules/formOnPage';
 
 dropdownMenu();
 modalWindow();
@@ -21,6 +22,7 @@ arrow();
 mainSlider();
 photogallery();
 carousel();
+formOnPage();
 
 
 
