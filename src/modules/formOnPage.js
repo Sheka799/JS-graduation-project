@@ -2,10 +2,12 @@ const formOnPage = () => {
   const thanks = document.getElementById('thanks'),
   freeVisitForm = document.querySelector('#free_visit_form'),
   callbackForm = document.querySelector('#callback_form'),
+  cardOrder = document.querySelector('#card_order'),
   errorCheck = 'Подтвердите согласие на обработку данных...',
   check1 = document.getElementById('check1'),
   check2 = document.getElementById('check2'),
   check = document.getElementById('check'),
+  cardCheck = document.getElementById('card_check'),
   mozaika = document.getElementById('footer_leto_mozaika'),
   shelkovo = document.getElementById('footer_leto_schelkovo');
  
@@ -47,16 +49,17 @@ const formOnPage = () => {
      thanks.style.display = 'block';
      freeVisitForm.style.display = 'none';
      callbackForm.style.display = 'none';
-     const h4 = document.querySelector('.thanks_h4');    
-     const p = document.querySelector('.thanks_p');
-     h4.textContent = 'Спасибо';  
-     p.textContent = 'Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.';  
+     // const h4 = document.querySelector('.thanks_h4');    
+     // const p = document.querySelector('.thanks_p');
+     // h4.textContent = 'Спасибо';  
+     // p.textContent = 'Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.';  
    };
   
    const formOne = document.getElementById('phone');
    const formThree = document.getElementById('callback_form2-phone');
    const formTwo = document.getElementById('callback_form1-phone');
    const formFour = document.getElementById('callback_footer_form-phone');
+   const formFive = document.getElementById('callback_form-phone');
  
    formBanner.addEventListener('input', () => {
        formOne.value = formOne.value.replace (/[^\+\d]/g, '');
@@ -69,6 +72,9 @@ const formOnPage = () => {
      });
    footerForm.addEventListener('input', () => {
      formFour.value = formFour.value.replace (/[^\+\d]/g, '');
+     });
+     formFive.addEventListener('input', () => {
+       formFive.value = formFive.value.replace (/[^\+\d]/g, '');
      });
  
      const formName = document.querySelectorAll('.form-name');
@@ -235,6 +241,144 @@ const formOnPage = () => {
  }
    
  });
+ 
+ 
+ //  Форма CARDS
+ cardOrder.addEventListener('submit', (event) => {
+   event.preventDefault();  //  для того, чтобы страница не перезагружалась
+   if (cardCheck.checked) {
+   // statusMessage.textContent = loadMessage;
+   statusMessage.style.cssText = 'color: white';
+   const cardDataFooter = new FormData(cardOrder);
+   let body = {};
+   cardDataFooter.forEach((val, key) => {
+     body[key] = val;
+   });
+   
+   postData(body)
+   .then((response) => {
+     if (response.status !== 200) {
+       throw new Error('status network not 200');
+     }
+     successMessage();
+     // statusMessage.style.cssText = 'color: white';
+     cardOrder.reset();
+   })
+   .catch((error) => {
+     errorMessage();
+     // statusMessage.style.cssText = 'color: white';
+     cardOrder.reset();
+     console.error(error);
+ });
+ } else if (cardCheck.checked) {
+ // statusMessage.textContent = loadMessage;
+ statusMessage.style.cssText = 'color: white';
+ const cardDataFooter = new FormData(cardOrder);
+ let body = {};
+ cardDataFooter.forEach((val, key) => {
+   body[key] = val;
+ });
+ 
+ postData(body)
+ .then((response) => {
+   if (response.status !== 200) {
+     throw new Error('status network not 200');
+   }
+   successMessage();
+   // statusMessage.style.cssText = 'color: white';
+   cardOrder.reset();
+ })
+ .catch((error) => {
+   errorMessage();
+   // statusMessage.style.cssText = 'color: white';
+   cardOrder.reset();
+   console.error(error);
+ });
+ } else if (cardCheck.checked) {
+   // statusMessage.textContent = loadMessage;
+   statusMessage.style.cssText = 'color: white';
+   const cardDataFooter = new FormData(cardOrder);
+   let body = {};
+   cardDataFooter.forEach((val, key) => {
+     body[key] = val;
+   });
+   
+   postData(body)
+   .then((response) => {
+     if (response.status !== 200) {
+       throw new Error('status network not 200');
+     }
+     successMessage();
+     // statusMessage.style.cssText = 'color: white';
+     cardOrder.reset();
+   })
+   .catch((error) => {
+     errorMessage();
+     // statusMessage.style.cssText = 'color: white';
+     cardOrder.reset();
+     console.error(error);
+   });
+   } else if (cardCheck.checked) {
+     // statusMessage.textContent = loadMessage;
+     statusMessage.style.cssText = 'color: white';
+     const cardDataFooter = new FormData(cardOrder);
+     let body = {};
+     cardDataFooter.forEach((val, key) => {
+       body[key] = val;
+     });
+     
+     postData(body)
+     .then((response) => {
+       if (response.status !== 200) {
+         throw new Error('status network not 200');
+       }
+       successMessage();
+       // statusMessage.style.cssText = 'color: white';
+       cardOrder.reset();
+     })
+     .catch((error) => {
+       errorMessage();
+       // statusMessage.style.cssText = 'color: white';
+       cardOrder.reset();
+       console.error(error);
+     });
+     } else if (cardCheck.checked) {
+       // statusMessage.textContent = loadMessage;
+       statusMessage.style.cssText = 'color: white';
+       const cardDataFooter = new FormData(cardOrder);
+       let body = {};
+       cardDataFooter.forEach((val, key) => {
+         body[key] = val;
+       });
+       
+       postData(body)
+       .then((response) => {
+         if (response.status !== 200) {
+           throw new Error('status network not 200');
+         }
+         successMessage();
+         // statusMessage.style.cssText = 'color: white';
+         cardOrder.reset();
+       })
+       .catch((error) => {
+         errorMessage();
+         // statusMessage.style.cssText = 'color: white';
+         cardOrder.reset();
+         console.error(error);
+       });
+       } 
+ else {
+   cardOrder.appendChild(statusMessage);
+   statusMessage.style.cssText = 'color: black';
+   statusMessage.style.cssText = 'font-size: 20px';
+ statusMessage.textContent = errorCheck;
+ setTimeout(timerDelete, 3000);
+ }
+ 
+ });
+ 
+ 
+ 
  const postData = (body) => {
    return fetch('./server.php', {
      method: 'POST',
@@ -247,5 +391,3 @@ const formOnPage = () => {
  };
  
  export default formOnPage;
- 
- 
