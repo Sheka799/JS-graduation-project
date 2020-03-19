@@ -10,17 +10,19 @@ import arrow from './modules/arrow';
 import mainSlider from './modules/mainSlider';
 import photogallery from './modules/photogallery';
 import carousel from './modules/carousel';
+import calc from './modules/calc';
 
 dropdownMenu();
 modalWindow();
 modalWindowTwo();
-// gift();
+gift();
 fixMenu();
 main();
 arrow();
 mainSlider();
 photogallery();
 carousel();
+calc();
 
 
 
