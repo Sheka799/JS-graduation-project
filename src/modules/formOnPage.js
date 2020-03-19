@@ -96,10 +96,9 @@ const formOnPage = () => {
   formBanner.addEventListener('submit', (event) => {
     event.preventDefault();  //  для того, чтобы страница не перезагружалась
     statusMessage.textContent = loadMessage;
-    formContent.appendChild(statusMessage);
-
+    formBanner.appendChild(statusMessage);
     if (check1.checked) {
-      statusMessage.textContent = loadMessage;
+      // statusMessage.textContent = loadMessage;
       statusMessage.style.cssText = 'color: white';
     const formData = new FormData(formBanner);
     let body = {};
@@ -135,8 +134,9 @@ const formOnPage = () => {
   //  Форма formVisit
   formVisit.addEventListener('submit', (event) => {
     event.preventDefault();  //  для того, чтобы страница не перезагружалась
+    formVisit.appendChild(statusMessage);
     statusMessage.textContent = loadMessage;
-    formContent.appendChild(statusMessage);
+   
 
     if (check.checked) {
       statusMessage.textContent = loadMessage;
@@ -174,8 +174,9 @@ const formOnPage = () => {
    //  Форма formContent
    formContent.addEventListener('submit', (event) => {
     event.preventDefault();  //  для того, чтобы страница не перезагружалась
-    statusMessage.textContent = loadMessage;
     formContent.appendChild(statusMessage);
+    statusMessage.textContent = loadMessage;
+    
     if (check2.checked) {
       statusMessage.textContent = loadMessage;
       statusMessage.style.cssText = 'color: white';
@@ -210,7 +211,7 @@ const formOnPage = () => {
    footerForm.addEventListener('submit', (event) => {
     event.preventDefault();  //  для того, чтобы страница не перезагружалась
         statusMessage.textContent = loadMessage;
-        // cardOrder.appendChild(statusMessage);
+        footerForm.appendChild(statusMessage);
 
     if (mozaika.checked) {
     statusMessage.textContent = loadMessage;
@@ -280,6 +281,7 @@ cardOrder.addEventListener('submit', (event) => {
       statusMessage.textContent = loadMessage;
       cardOrder.appendChild(statusMessage);
       statusMessage.style.cssText = 'color: black';
+      statusMessage.style.cssText = 'font-size: 20px';
   if (cardCheck.checked) {
   statusMessage.textContent = loadMessage;
   // statusMessage.style.cssText = 'color: white';
