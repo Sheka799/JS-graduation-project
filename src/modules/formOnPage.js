@@ -33,7 +33,6 @@ const formOnPage = () => {
   statusMessage.style.cssText = 'font-size: 14px';
   statusMessage.style.cssText = 'color: white';
 
-  // const errorMessage = 'Что то пошло не так...',
   const errorMessage = () => {
     thanks.style.display = 'block';
     freeVisitForm.style.display = 'none';
@@ -44,7 +43,13 @@ const formOnPage = () => {
     p.textContent = 'Ваша заявка не отправлена!';  
 
   };
-  // loadMessage = 'Загрузка...',
+  
+  const timerDelete = () => {
+    statusMessage.textContent = '';
+    statusMessage.textContent = '';
+  };
+
+  const loadMessage = 'Пожалуйста подождите...';
   const successMessage = () => {
     thanks.style.display = 'block';
     freeVisitForm.style.display = 'none';
@@ -86,14 +91,16 @@ const formOnPage = () => {
       }
     });
 
-    const timerDelete = () => {
-      statusMessage.textContent = '';
-    };
 
   // //  Форма formBanner
   formBanner.addEventListener('submit', (event) => {
     event.preventDefault();  //  для того, чтобы страница не перезагружалась
+    statusMessage.textContent = loadMessage;
+    formContent.appendChild(statusMessage);
+
     if (check1.checked) {
+      statusMessage.textContent = loadMessage;
+      statusMessage.style.cssText = 'color: white';
     const formData = new FormData(formBanner);
     let body = {};
     formData.forEach((val, key) => {
@@ -106,11 +113,14 @@ const formOnPage = () => {
         throw new Error('status network not 200');
       }
       successMessage();
+      setTimeout(timerDelete, 1800);
       // statusMessage.style.cssText = 'color: white';
       formBanner.reset();
     })
     .catch((error) => {
-      errorMessage();
+      setTimeout (errorMessage, 2000);
+      setTimeout(timerDelete, 1800);
+
       // statusMessage.style.cssText = 'color: white';
       formBanner.reset();
       console.error(error);
@@ -125,7 +135,12 @@ const formOnPage = () => {
   //  Форма formVisit
   formVisit.addEventListener('submit', (event) => {
     event.preventDefault();  //  для того, чтобы страница не перезагружалась
+    statusMessage.textContent = loadMessage;
+    formContent.appendChild(statusMessage);
+
     if (check.checked) {
+      statusMessage.textContent = loadMessage;
+      statusMessage.style.cssText = 'color: white';
     const formVis = new FormData(formVisit);
     let body = {};
     formVis.forEach((val, key) => {
@@ -138,11 +153,13 @@ const formOnPage = () => {
         throw new Error('status network not 200');
       }
       successMessage();
+      setTimeout(timerDelete, 1800);
       // statusMessage.style.cssText = 'color: white';
       formVisit.reset();
     })
     .catch((error) => {
-      errorMessage();
+      setTimeout (errorMessage, 2000);
+      setTimeout(timerDelete, 1800);
       // statusMessage.style.cssText = 'color: white';
       formVisit.reset();
       console.error(error);
@@ -157,7 +174,11 @@ const formOnPage = () => {
    //  Форма formContent
    formContent.addEventListener('submit', (event) => {
     event.preventDefault();  //  для того, чтобы страница не перезагружалась
+    statusMessage.textContent = loadMessage;
+    formContent.appendChild(statusMessage);
     if (check2.checked) {
+      statusMessage.textContent = loadMessage;
+      statusMessage.style.cssText = 'color: white';
     const formDataContent = new FormData(formContent);
     let body = {};
     formDataContent.forEach((val, key) => {
@@ -170,10 +191,12 @@ const formOnPage = () => {
         throw new Error('status network not 200');
       }
       successMessage();
+      setTimeout(timerDelete, 1800);
       formContent.reset();
     })
     .catch((error) => {
-      errorMessage();
+      setTimeout (errorMessage, 2000);
+      setTimeout(timerDelete, 1800);
       formContent.reset();
       console.error(error);
   });
@@ -186,8 +209,11 @@ const formOnPage = () => {
    //  Форма footerForm
    footerForm.addEventListener('submit', (event) => {
     event.preventDefault();  //  для того, чтобы страница не перезагружалась
+        statusMessage.textContent = loadMessage;
+        // cardOrder.appendChild(statusMessage);
+
     if (mozaika.checked) {
-    // statusMessage.textContent = loadMessage;
+    statusMessage.textContent = loadMessage;
     statusMessage.style.cssText = 'color: white';
     const formDataFooter = new FormData(footerForm);
     let body = {};
@@ -201,17 +227,19 @@ const formOnPage = () => {
         throw new Error('status network not 200');
       }
       successMessage();
+      setTimeout(timerDelete, 1800);
       // statusMessage.style.cssText = 'color: white';
       footerForm.reset();
     })
     .catch((error) => {
-      errorMessage();
+      setTimeout (errorMessage, 2000);
+      setTimeout(timerDelete, 1800);
       // statusMessage.style.cssText = 'color: white';
       footerForm.reset();
       console.error(error);
   });
 } else if (shelkovo.checked) {
-  // statusMessage.textContent = loadMessage;
+  statusMessage.textContent = loadMessage;
   statusMessage.style.cssText = 'color: white';
   const formDataFooter = new FormData(footerForm);
   let body = {};
@@ -225,11 +253,13 @@ const formOnPage = () => {
       throw new Error('status network not 200');
     }
     successMessage();
+    setTimeout(timerDelete, 1800);
     // statusMessage.style.cssText = 'color: white';
     footerForm.reset();
   })
   .catch((error) => {
-    errorMessage();
+    setTimeout (errorMessage, 2000);
+    setTimeout(timerDelete, 1800);
     // statusMessage.style.cssText = 'color: white';
     footerForm.reset();
     console.error(error);
@@ -247,9 +277,12 @@ else {
 //  Форма CARDS
 cardOrder.addEventListener('submit', (event) => {
   event.preventDefault();  //  для того, чтобы страница не перезагружалась
+      statusMessage.textContent = loadMessage;
+      cardOrder.appendChild(statusMessage);
+      statusMessage.style.cssText = 'color: black';
   if (cardCheck.checked) {
-  // statusMessage.textContent = loadMessage;
-  statusMessage.style.cssText = 'color: white';
+  statusMessage.textContent = loadMessage;
+  // statusMessage.style.cssText = 'color: white';
   const cardDataFooter = new FormData(cardOrder);
   let body = {};
   cardDataFooter.forEach((val, key) => {
@@ -262,11 +295,13 @@ cardOrder.addEventListener('submit', (event) => {
       throw new Error('status network not 200');
     }
     successMessage();
+    setTimeout(timerDelete, 1800);
     // statusMessage.style.cssText = 'color: white';
     cardOrder.reset();
   })
   .catch((error) => {
-    errorMessage();
+    setTimeout (errorMessage, 2000);
+    setTimeout(timerDelete, 1800);
     // statusMessage.style.cssText = 'color: white';
     cardOrder.reset();
     console.error(error);
@@ -286,11 +321,13 @@ postData(body)
     throw new Error('status network not 200');
   }
   successMessage();
+  setTimeout(timerDelete, 1800);
   // statusMessage.style.cssText = 'color: white';
   cardOrder.reset();
 })
 .catch((error) => {
-  errorMessage();
+  setTimeout (errorMessage, 2000);
+  setTimeout(timerDelete, 1800);
   // statusMessage.style.cssText = 'color: white';
   cardOrder.reset();
   console.error(error);
@@ -310,11 +347,13 @@ postData(body)
       throw new Error('status network not 200');
     }
     successMessage();
+    setTimeout(timerDelete, 1800);
     // statusMessage.style.cssText = 'color: white';
     cardOrder.reset();
   })
   .catch((error) => {
-    errorMessage();
+    setTimeout (errorMessage, 2000);
+    setTimeout(timerDelete, 1800);
     // statusMessage.style.cssText = 'color: white';
     cardOrder.reset();
     console.error(error);
@@ -334,11 +373,13 @@ postData(body)
         throw new Error('status network not 200');
       }
       successMessage();
+      setTimeout(timerDelete, 1800);
       // statusMessage.style.cssText = 'color: white';
       cardOrder.reset();
     })
     .catch((error) => {
-      errorMessage();
+      setTimeout (errorMessage, 2000);
+      setTimeout(timerDelete, 1800);
       // statusMessage.style.cssText = 'color: white';
       cardOrder.reset();
       console.error(error);
@@ -358,11 +399,13 @@ postData(body)
           throw new Error('status network not 200');
         }
         successMessage();
+        setTimeout(timerDelete, 1800);
         // statusMessage.style.cssText = 'color: white';
         cardOrder.reset();
       })
       .catch((error) => {
-        errorMessage();
+        setTimeout (errorMessage, 2000);
+        setTimeout(timerDelete, 1800);
         // statusMessage.style.cssText = 'color: white';
         cardOrder.reset();
         console.error(error);

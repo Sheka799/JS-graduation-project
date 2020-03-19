@@ -13,58 +13,58 @@ const calc = () => {
    const countSum = () => {
     if (m1.checked && cardLetoMozaika.checked) {
       if (promoCode === promo.value) {
-      priceTotal.textContent = Math.floor(1999 * 0.7);
+      priceTotal.value = Math.floor(1999 * 0.7);
       } else {
-        priceTotal.textContent = '1999';
+        priceTotal.value = '1999';
       }
     }
     if (m2.checked && cardLetoMozaika.checked) {
       if (promoCode === promo.value) {
-        priceTotal.textContent = Math.floor(9900 * 0.7);
+        priceTotal.value = Math.floor(9900 * 0.7);
         } else {
-          priceTotal.textContent = '9900';
+          priceTotal.value = '9900';
         }
     }
     if (m3.checked && cardLetoMozaika.checked) {
       if (promoCode === promo.value) {
-        priceTotal.textContent = Math.floor(13900 * 0.7);
+        priceTotal.value = Math.floor(13900 * 0.7);
         } else {
-          priceTotal.textContent = '13900';
+          priceTotal.value = '13900';
         }
     }
     if (m4.checked && cardLetoMozaika.checked) {
       if (promoCode === promo.value) {
-        priceTotal.textContent = Math.floor(19900 * 0.7);
+        priceTotal.value = Math.floor(19900 * 0.7);
         } else {
-          priceTotal.textContent = '19900';
+          priceTotal.value = '19900';
         }
     }
     if (m1.checked && cardLetoSchelkovo.checked) {
       if (promoCode === promo.value) {
-        priceTotal.textContent = Math.floor(2999 * 0.7);
+        priceTotal.value = Math.floor(2999 * 0.7);
         } else {
-          priceTotal.textContent = '2999';
+          priceTotal.value = '2999';
         }
     }
     if (m2.checked && cardLetoSchelkovo.checked) {
       if (promoCode === promo.value) {
-        priceTotal.textContent = Math.floor(14990 * 0.7);
+        priceTotal.value = Math.floor(14990 * 0.7);
         } else {
-          priceTotal.textContent = '14990';
+          priceTotal.value = '14990';
         }
     }
     if (m3.checked && cardLetoSchelkovo.checked) {
       if (promoCode === promo.value) {
-        priceTotal.textContent = Math.floor(21990 * 0.7);
+        priceTotal.value = Math.floor(21990 * 0.7);
         } else {
-          priceTotal.textContent = '21990';
+          priceTotal.value = '21990';
         }
     }
     if (m4.checked && cardLetoSchelkovo.checked) {
       if (promoCode === promo.value) {
-        priceTotal.textContent = Math.floor(24990 * 0.7);
+        priceTotal.value = Math.floor(24990 * 0.7);
         } else {
-          priceTotal.textContent = '24990';
+          priceTotal.value = '24990';
         }
     }
    };
