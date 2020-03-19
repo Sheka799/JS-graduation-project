@@ -9,7 +9,6 @@ const calc = () => {
    priceTotal = document.querySelector('.price-total'),
    promo = document.querySelector('.promo'),
    promoCode = 'ТЕЛО2019';
-  console.log('11');
   
    const countSum = () => {
     if (m1.checked && cardLetoMozaika.checked) {
@@ -81,5 +80,4 @@ const calc = () => {
     }
   });
 };
-
-export default calc;
+calc();
