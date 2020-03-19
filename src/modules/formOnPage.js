@@ -60,6 +60,7 @@ const formOnPage = () => {
    const formTwo = document.getElementById('callback_form1-phone');
    const formFour = document.getElementById('callback_footer_form-phone');
    const formFive = document.getElementById('callback_form-phone');
+   
  
    formBanner.addEventListener('input', () => {
        formOne.value = formOne.value.replace (/[^\+\d]/g, '');
@@ -391,3 +392,5 @@ const formOnPage = () => {
  };
  
  export default formOnPage;
+ 
+ 
